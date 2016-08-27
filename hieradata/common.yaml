@@ -1,0 +1,17 @@
+---
+classes: 
+  - openvmtools
+  - ssh
+openvmtools::autoupgrade: true
+
+ssh::server_options:
+    Protocol: '2'
+    ListenAddress:
+        - '127.0.0.0'
+        - '%{::hostname}'
+    PasswordAuthentication: 'yes'
+    SyslogFacility: 'AUTHPRIV'
+    UsePAM: 'yes'
+    X11Forwarding: 'yes'
+    PermitRootLogin: 'no'
+
